@@ -1,0 +1,5 @@
+category: Libs
+requires: cygwin libneon27 expat heimdal-devel gettext openssl-devel zlib
+external-source: neon
+sdesc: "HTTP and WebDAV library (runtime)"
+ldesc: "neon is an HTTP and WebDAV client library, with a C language API."

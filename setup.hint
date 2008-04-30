@@ -1,0 +1,4 @@
+category: Libs
+requires: libneon-devel
+sdesc: "HTTP and WebDAV library (locale, docs)"
+ldesc: "neon is an HTTP and WebDAV client library, with a C language API."
