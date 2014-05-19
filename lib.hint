@@ -1,5 +1,0 @@
-category: Libs
-requires: libexpat0 libgssapi2 libintl8 libroken18 libopenssl098 zlib
-external-source: neon
-sdesc: "HTTP and WebDAV library (runtime)"
-ldesc: "neon is an HTTP and WebDAV client library, with a C language API."
