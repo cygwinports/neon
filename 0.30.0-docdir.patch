@@ -1,0 +1,11 @@
+--- origsrc/neon-0.30.0/Makefile.in	2009-09-04 02:35:11.000000000 -0500
++++ src/neon-0.30.0/Makefile.in	2014-05-19 16:57:30.615895400 -0500
+@@ -22,7 +22,7 @@ man1dir = $(mandir)/man1
+ man3dir = $(mandir)/man3
+ datarootdir = @datarootdir@
+ datadir = @datadir@
+-docdir = $(datadir)/doc/neon-@NEON_VERSION@
++docdir = @docdir@
+ includedir = @includedir@
+ neonincludes = $(includedir)/neon
+ pkgconfigdir = $(libdir)/pkgconfig

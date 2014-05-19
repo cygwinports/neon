@@ -1,17 +1,27 @@
 NAME="neon"
-VERSION=0.28.2
+VERSION=0.30.0
 RELEASE=1
 CATEGORY="Libs"
 SUMMARY="HTTP and WebDAV library"
 DESCRIPTION="neon is an HTTP and WebDAV client library, with a C language API."
 HOMEPAGE="http://www.webdav.org/neon/"
 SRC_URI="http://www.webdav.org/neon/neon-${VERSION}.tar.gz"
+PATCH_URI="0.30.0-docdir.patch"
 
-PKG_NAMES="libneon27 libneon-devel"
+PKG_NAMES="neon libneon27 libneon-devel libneon-doc"
+neon_CONTENTS="--exclude=html usr/share/doc/ usr/share/locale/"
+libneon27_REQUIRES="ca-certificates neon"
 libneon27_CONTENTS="usr/bin/cygneon-27.dll"
-libneon_devel_CONTENTS="usr/bin/neon-config usr/include/ usr/lib/ usr/share/man/man3/"
+libneon_devel_CONTENTS="usr/bin/neon-config usr/include/ usr/lib/ usr/share/man/man1/neon-config.1*"
+libneon_doc_CATEGORY="Doc"
+libneon_doc_CONTENTS="usr/share/doc/${NAME}/html/ usr/share/man/man3/"
 
 # for some reason, autotools doesn't pick this up
-ACLOCAL="aclocal -I macros"
+ACLOCAL_FLAGS="-I macros"
 
-CYGCONF_ARGS="--with-expat --with-ssl=openssl"
+CYGCONF_ARGS="
+	--with-ca-bundle=/usr/ssl/certs/ca-bundle.crt
+	--with-expat
+	--with-ssl=openssl
+
+"
